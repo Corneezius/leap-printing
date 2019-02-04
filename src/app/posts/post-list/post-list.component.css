@@ -1,0 +1,21 @@
+:host {
+  display: block;
+  margin-top: 1rem;
+}
+
+.info-text {
+  text-align: center;
+}
+
+h3 {
+  text-align:center;
+}
+
+.grid {
+ display:flex; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.new-column {
+  flex:25%;
+}

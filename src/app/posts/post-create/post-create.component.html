@@ -1,0 +1,651 @@
+<h2>Family Part Case Information Statement</h2>
+
+<mat-accordion class="example-headers-align">
+  <form (submit)="onAddPost();" #postForm="ngForm">
+  <!-- Part A -->
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Part A - Case Information:
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <section class="row">
+      <section class="column">
+
+          <!-- <mat-error *ngIf="name.invalid">Please enter a name.</mat-error> -->
+        <mat-form-field>
+              <input matInput
+                     type="date"
+                     min="1"
+                     placeholder="Date of Statement"
+                     required
+                     name="statementDate"
+                     [(ngModel)]="post.statementDate">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     type="date"
+                     min="1"
+                     placeholder="Date of Divorce"
+                     required
+                     name="divorceDate"
+                     [(ngModel)]="post.divorceDate">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     type="date"
+                     min="1"
+                     placeholder="Date of Prior Statement"
+                     required
+                     name="priorStatement"
+                     [(ngModel)]="post.priorStatement">
+                     
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     type="date"
+                     min="1"
+                     placeholder="birthdate"
+                     required
+                     name="birthdate"
+                     [(ngModel)]="post.birthdate">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     type="date"
+                     min="1"
+                     placeholder="Birthdate of Other Party"
+                     required
+                     name="otherBirthDate"
+                     [(ngModel)]="post.otherBirthDate">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     type="date"
+                     min="1"
+                     placeholder="Date of Marriage"
+                     required
+                     name="marriageDate"
+                     [(ngModel)]="post.marriageDate">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     type="date"
+                     min="1"
+                     placeholder="Date of Separation"
+                     required
+                     name="separationDate"
+                     [(ngModel)]="post.separationDate">
+            </mat-form-field>
+            <br>
+            Does an agreement exist between parties relative to any issue? If YES,  UPLOAD a copy (if written) or a summary (if oral) <a href="">here</a>.
+            <mat-checkbox
+                    class="example-margin"
+                    [(ngModel)]="post.agreementExist"
+                    name="agreementExist"
+                    >
+                      Yes
+            </mat-checkbox>
+            <mat-checkbox 
+            class="example-margin"
+            [checked]="!post.agreementExist"
+            (change)="post.agreementExist = !post.agreementExist">
+                      No
+              </mat-checkbox>
+          </section>
+          <h5> Issues in Dispute:</h5>
+          <section class="column">
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="Cause of Action"
+                     required
+                      name="causeAction"
+                     [(ngModel)]="post.causeAction">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="Custody"
+                     required
+                     name="custody"
+                     [(ngModel)]="post.custody">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="Parenting Time"
+                     required
+                     name="parentingTime"
+                     [(ngModel)]="post.parentingTime">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="Alimony"
+                     required
+                     name="alimony"
+                     [(ngModel)]="post.alimony">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="childSupport"
+                     required
+                     name="childSupport"
+                     [(ngModel)]="post.childSupport">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="Equitable Distribution"
+                     required
+                     name="equitableDistribution"
+                     [(ngModel)]="post.equitableDistribution">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="Counsel Fees"
+                     required
+                     name="counselFees"
+                     [(ngModel)]="post.counselFees">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="Anticipated College Expenses"
+                     required
+                     name="college"
+                     [(ngModel)]="post.college">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput
+                     min="1"
+                     placeholder="Other"
+                     required
+                     name="other"
+                     [(ngModel)]="post.other">
+            </mat-form-field>
+          </section>
+        </section>
+        <h5> 1. Name and Addresses of Parties:</h5>
+        <section class="row">
+          <section class="column">
+            <!-- row+column -->
+            <mat-form-field>
+                <input matInput
+                       placeholder="Your Name"
+                       required
+                       name="yourName"
+                       [(ngModel)]="post.yourName">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                       placeholder="Street Address"
+                       required
+                       name="streetAddress"
+                       [(ngModel)]="post.streetAddress">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                       placeholder="City"
+                       required
+                       name="city"
+                       [(ngModel)]="post.city">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                       placeholder="State/Zip"
+                       required
+                       name="state"
+                       [(ngModel)]="post.state">
+            </mat-form-field>
+          </section>
+            <!-- row+column -->
+          <section class="column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Other Party Name"
+                       required
+                       name="secondParty"
+                       [(ngModel)]="post.secondParty">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                       placeholder="Street Address"
+                       required
+                       name="secondAddress"
+                       [(ngModel)]="post.secondAddress">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                       placeholder="City"
+                       required
+                       name="secondCity"
+                       [(ngModel)]="post.secondCity">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                       placeholder="State/Zip"
+                       required
+                       name="secondState"
+                       [(ngModel)]="post.secondState">
+            </mat-form-field>
+            <br>
+          </section>
+        </section>
+            <!-- row+column -->
+        <h5> 2. Name, Address, Birthdate and Person with whom children reside:</h5>
+        <p class="subtext"> a.Children from this relationships<p>
+        <section class="grid">
+          <section class="new-column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Child Full Name"
+                       required
+                       name="childOne"
+                       [(ngModel)]="post.childOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="childOne"
+                [(ngModel)]="post.childOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="childOne"
+                [(ngModel)]="post.childOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="childOne"
+                [(ngModel)]="post.childOne">
+            </mat-form-field>
+          </section>
+            <!-- row+column -->
+          <section class="new-column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Address"
+                       required
+                       name="addressOne"
+                       [(ngModel)]="post.addressOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="addressOne"
+                [(ngModel)]="post.addressOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="addressOne"
+
+                [(ngModel)]="post.addressOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="addressOne"
+
+                [(ngModel)]="post.addressOne">
+            </mat-form-field>
+          </section>
+            <!-- row+column -->
+          <section class="new-column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Birthdates"
+                       required
+                       name="birthOne"
+                       [(ngModel)]="post.birthOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="birthOne"
+                [(ngModel)]="post.birthOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="birthOne"
+
+                [(ngModel)]="post.birthOne">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="birthOne"
+
+                [(ngModel)]="post.birthOne">
+            </mat-form-field>
+          </section>
+          <section class="new-column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Person One"
+                       required
+                       name="personOne"
+                       [(ngModel)]="post.personOne">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                name="personOne"
+                [(ngModel)]="post.personOne">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                name="personOne"
+                [(ngModel)]="post.personOne">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                name="personOne"
+                [(ngModel)]="post.personOne">
+            </mat-form-field>
+          </section>
+        </section>
+            <!-- row+column -->
+        <p class="subtext"> a.Children from other relationships<p>
+        <section class="grid">
+          <section class="new-column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Child Full Name"
+                       required
+                       name="childTwo"
+                       [(ngModel)]="post.childTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="childTwo"
+                [(ngModel)]="post.childTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="childTwo"
+                [(ngModel)]="post.childTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="childTwo"
+                [(ngModel)]="post.childTwo">
+            </mat-form-field>
+          </section>
+            <!-- row+column -->
+          <section class="new-column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Address"
+                       required
+                       name="addressTwo"
+                       [(ngModel)]="post.addressTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="addressTwo"
+                [(ngModel)]="post.addressTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                name="addressTwo"
+                [(ngModel)]="post.addressTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                       name="addressTwo"
+                       [(ngModel)]="post.addressTwo"
+                       >
+            </mat-form-field>
+          </section>
+            <!-- row+column -->
+          <section class="new-column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Birthdates"
+                       required
+                       [(ngModel)]="post.birthTwo"
+                       name="birthTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                [(ngModel)]="post.birthTwo"
+
+                       name="birthTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                [(ngModel)]="post.birthTwo"
+
+                       name="birthTwo">
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <input matInput
+                [(ngModel)]="post.birthTwo"
+
+                       name="birthTwo">
+            </mat-form-field>
+          </section>
+        <section class="new-column">
+            <mat-form-field>
+                <input matInput
+                       placeholder="Person Two"
+                       required
+                       name="personTwo"
+                       [(ngModel)]="post.personTwo">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                name="personTwo"
+                [(ngModel)]="post.personTwo">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                name="personTwo"
+                [(ngModel)]="post.personTwo">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput
+                name="personTwo"
+                [(ngModel)]="post.personTwo">
+            </mat-form-field>
+          </section>
+        </section>
+
+        <mat-action-row>
+          <!-- <button mat-button color="primary" (click)="nextStep()">Next</button> -->
+        </mat-action-row>
+      </mat-expansion-panel>
+      <!-- Part B -->
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Part B - Miscellaneous:
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+          <h4 class="none"> 1. Information about Employment(Provide Name & Address of Business, if Self-Employed):</h4>
+          <section class="row">
+            <section class="column">
+              <mat-form-field>
+                <input
+                  matInput
+                  rows="1"
+                  name="employerName"
+                  [(ngModel)]="post.employerName"
+                  placeholder="Name of Employer/Business"
+                >
+                <!-- <mat-error *ngIf="address.invalid">Please enter a post title.</mat-error> -->
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  rows="1"
+                  name="employerName"
+                  [(ngModel)]="post.employerName"
+                  placeholder="Name of Employer/Business"
+                  >
+                <!-- <mat-error *ngIf="address.invalid">Please enter a post title.</mat-error> -->
+              </mat-form-field>
+          </section>
+          <section class="column">
+            <mat-form-field>
+              <input
+                matInput
+                rows="1"
+                name="employerAddress"
+                [(ngModel)]="post.employerAddress"
+                placeholder="Address"
+                >
+              <!-- <mat-error *ngIf="address.invalid">Please enter a post title.</mat-error> -->
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                rows="1"
+                name="employerAddress"
+                [(ngModel)]="post.employerAddress"
+                placeholder="Address"
+                >
+              <!-- <mat-error *ngIf="address.invalid">Please enter a post title.</mat-error> -->
+            </mat-form-field>
+            </section>
+          </section>
+          <h4 class="none"> 2. Do you have insurance gained through Employment/Business? </h4>
+          <mat-checkbox 
+            [(ngModel)]="post.insurance"
+            name="insurance"
+            class="example-margin">Yes</mat-checkbox>
+            <mat-checkbox 
+            name="insurance"
+            [checked]="!post.insurance"
+            (change)="post.insurance= !post.insurance"
+              class="example-margin">No</mat-checkbox>
+
+          <br>
+          <h4> Type of insurance: </h4>
+          <mat-checkbox 
+          name="type"
+            [(ngModel)]="post.type"
+            class="example-margin">Yes</mat-checkbox>
+            <mat-checkbox 
+            name="type"
+            [checked]="!post.type"
+            (change)="post.type= !post.type"
+              class="example-margin">No</mat-checkbox>
+            <h4> Medical: </h4>
+            <mat-checkbox
+            name="medical"
+            [(ngModel)]="post.medical"
+            class="example-margin">Yes</mat-checkbox>
+            <mat-checkbox
+            name="medical"
+            [checked]="!post.medical"
+            (change)="post.medical= !post.medical"
+            class="example-margin">No</mat-checkbox>
+            <h4> Dental: </h4>
+            <mat-checkbox  
+            name="dental"   
+            [(ngModel)]="post.dental"
+            class="example-margin">Yes</mat-checkbox>
+            <mat-checkbox 
+            name="dental"
+            [checked]="!post.dental"
+            (change)="post.dental= !post.dental"
+            class="example-margin">No</mat-checkbox>
+            <h4> Prescription Drug: </h4>
+            <mat-checkbox  
+            name="prescription"   
+            [(ngModel)]="post.prescription"
+            class="example-margin">Yes</mat-checkbox>
+            <mat-checkbox 
+            name="prescription"
+            [checked]="!post.prescription"
+            (change)="post.prescription= !post.prescription" class="example-margin">No</mat-checkbox>
+            <h4> Disability: </h4>
+            <mat-checkbox
+            name="disability" 
+            [(ngModel)]="post.disability"
+            class="example-margin">Yes</mat-checkbox>
+            <mat-checkbox 
+            name="disability"
+            [checked]="!post.disability"
+            (change)="post.disability= !post.disability"
+            class="example-margin">No</mat-checkbox>
+              <mat-form-field>
+                <input
+                  matInput
+                  rows="1"
+                  name="otherB"
+                  [(ngModel)]="post.otherB"
+                  placeholder="otherB"
+                  >
+                <!-- <mat-error *ngIf="address.invalid">Please enter a post title.</mat-error> -->
+              </mat-form-field>
+              <br>
+              <h4 class="none"> Is insurance available through business? </h4>
+              <mat-checkbox 
+                name="insuranceAvailable"
+                [(ngModel)]="post.insuranceAvailable"
+                class="example-margin">Yes</mat-checkbox>
+                <mat-checkbox 
+                name="insuranceAvailable"
+                [checked]="!post.insuranceAvailable"
+                (change)="post.insuranceAvailable= !post.insuranceAvailable"
+                class="example-margin">No</mat-checkbox>
+              <br>
+              <mat-form-field>
+                <input
+                  matInput
+                  rows="1"
+                  name="explain"
+                  [(ngModel)]="post.explain"
+                  placeholder="explain"
+                  #address="ngModel">
+                <!-- <mat-error *ngIf="address.invalid">Please enter a post title.</mat-error> -->
+              </mat-form-field>
+              <br>
+                <h4 class="none"> 3. <span class="attached">ATTACHED</span> Affidavit of Insurance Coverage as required by Court Rule 5:4-2 (f) (See Part G) </h4>
+              <h4 class="none"> 4. Confidential Litigant Information Sheet: Filed </h4>
+              <mat-checkbox 
+              name="sheet"
+              [(ngModel)]="post.sheet"
+              class="example-margin">Yes</mat-checkbox>
+              <mat-checkbox 
+              [checked]="!post.sheet"
+              (change)="post.sheet= !post.sheet"
+              class="example-margin">No</mat-checkbox>
+                        <br>
+              <h4 class="none"> 5. <span class="attached">ATTACHED</span> a list of all prior/pending family actions involving support, custody or Domestic Violence, with the Docket Number, County, State and the disposition reached. Attach copies of all existing Orders in effect. </h4>
+
+
+
+
+            <button
+              mat-raised-button
+              color="accent"
+              type="submit">Save Post</button>
+          </mat-expansion-panel>
+        <!-- Part C  -->
+        </form>
+<mat-accordion>

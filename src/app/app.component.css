@@ -1,0 +1,8 @@
+main {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.mat-toolbar.mat-primary {
+  background:#1D365E;
+}

@@ -1,0 +1,61 @@
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+h2 {
+  text-align:center;
+}
+
+mat-panel-title, h3 {
+  font-family:'Times New Roman', Times, serif;
+  font-weight:bold;
+}
+
+h3 {
+  text-align:center;
+}
+
+.row {
+  display: flex;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.column {
+  flex: 50%;
+}
+
+mat-form-field {
+  width:75%;
+  font-family:'Times New Roman', Times, serif;
+}
+
+.grid {
+ display:flex; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.new-column {
+  flex:25%;
+}
+
+.example-margin {
+  margin-right:10px;
+}
+
+h5 {
+ font-family:'Times New Roman', Times, serif;
+ font-size:12px;
+}
+
+h4 {
+  font-family:'Times New Roman', Times, serif;
+  text-decoration: underline;
+}
+.none {
+  text-decoration: none!important;
+}
+
+.attached {
+  font-weight:600!important;
+}

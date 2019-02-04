@@ -1,0 +1,64 @@
+<h3> Client Intake List</h3>
+<mat-accordion multi="true" *ngIf="posts.length > 0">
+  <mat-expansion-panel *ngFor="let post of posts">
+    <mat-expansion-panel-header>
+    {{ post.yourName }}
+    </mat-expansion-panel-header>
+    <section class="grid">
+      <section class="new-column">
+        <p> Date of Statement : {{ post.statementDate }}</p>
+        <p> Date of Divorce:{{ post.divorceDate }}</p>
+        <p> Date of Prior Statements: {{ post.priorStatement }}</p>
+        <p> Client Birthdate: {{ post.birthDate }}</p>
+        <p> Other Birthday : {{ post.otherBirthDate }}</p>
+        <p> Date of Marriage:{{ post.marriageDate }}</p>
+        <p> Date of Separation: {{ post.separationDate }}</p>
+        <p> Cause of Action : {{ post.causeAction }}</p>
+        <p> Custody: {{ post.custody }}</p>
+      </section>
+      <section class="new-column">
+        <p> Parenting Time: {{ post.parentingTime }}</p>
+        <p> Alimony: {{ post.alimony }}</p>
+        <p> Child Support: {{ post.childSupport }}</p>
+        <p>Equitable Distribution: {{ post.equitableDistribution }}</p>
+        <p>Counsel Fees: {{ post.counselFees }}</p>
+        <p>College Expenses: {{ post.college }}</p>
+        <p>Other: {{ post.other}}</p>
+        <p>Your Name :{{ post.yourName }}</p>
+        <p>Street Address :{{ post.streetAddress }}</p>
+        <p>City: {{ post.city }}</p>
+      </section>
+      <section class="new-column">
+        <p> State: {{ post.state }}</p>
+        <p> Second Party Name:{{ post.secondParty }}</p>
+        <p> City: {{ post.secondCity }}</p>
+        <p> Street Address: {{ post.streetAddress }}</p>
+        <p>City : {{ post.city }}</p>
+        <p>State: {{ post.state }}</p>
+        <p>Second Party: {{ post.secondParty }}</p>
+        <p>Second Address:{{ post.secondAddress }}</p>
+        <p>Second City: {{ post.secondCity }}</p>
+        <p>Second State: {{ post.secondState }}</p>
+    </section>
+    <section class="new-column">
+        <p>Child One: {{ post.childOne }}</p>
+        <p>Child Birthday: {{ post.birthOne }}</p>
+        <p>Person One:{{ post.personOne }}</p>
+        <p>Child Two: {{ post.childTwo }}</p>
+        <p>Address Two:{{ post.addressTwo }}</p>
+        <p>BirthTwo :{{ post.birthTwo }}</p>
+        <p> Person Two:{{ post.personTwo }}</p>
+        <p>Child Two: {{ post.employerName }}</p>
+        <p>Address Two:{{ post.employerAddress }}</p>
+        <p>BirthTwo :{{ post.employerNameTwo}}</p>
+        <p> Person Two:{{ post.employerTwoAddress }}</p>
+      </section>
+    </section>
+    <mat-action-row>
+      <button mat-button color="primary">EDIT</button>
+      <button mat-button (click)="onDelete(post.Id)" color="warn">DELETE</button>
+      <button mat-button (click)="print(post)"color="primary">Print</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="posts.length <= 0">No clients added yet!</p>

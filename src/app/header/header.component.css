@@ -1,0 +1,16 @@
+.primary {
+  color:#1D365E;
+}
+
+mat-toolbar {
+  color:gold;
+}
+
+.gold {
+  color:gold;
+}
+
+mat-toolbar {
+  font-family:roboto;
+  font-weight:600;
+}
